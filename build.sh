@@ -8,4 +8,7 @@ python3 -m pip install -r requirements.txt
 echo "Collecting static files..."
 python3 manage.py collectstatic --noinput --clear
 
+# Langkah 3: Trik untuk Vercel agar tidak error
+mkdir public
+
 echo "Build selesai dengan sukses!"
