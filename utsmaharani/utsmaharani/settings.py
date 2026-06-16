@@ -8,11 +8,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "default-key-untuk-lokal")
 # Di lokal, pastikan kamu membuat environment variable DEBUG=True agar bisa dibuka
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = [
-    ".vercel.app",
-    "localhost",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = [
     "https://portofoliomaharani.vercel.app",
