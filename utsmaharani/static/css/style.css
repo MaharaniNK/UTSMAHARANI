@@ -8,7 +8,7 @@
 body {
   width: 100%;
   min-height: 100vh;
-  color: #102033;
+  color: #102033;;
   background: linear-gradient(135deg, #f3fbf9, #fff7ee);
 }
 
@@ -71,7 +71,7 @@ body {
 .description {
   max-width: 360px;
   margin-bottom: 26px;
-  color: #53616b;
+  color: #111827;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -105,7 +105,7 @@ body {
 }
 
 .contact-item p {
-  color: #53616b;
+  color:#111827;
   font-size: 13px;
 }
 
@@ -154,8 +154,30 @@ body {
   font-size: 20px;
 }
 
+.info-card ul {
+  list-style-type: none; /* Hilangkan bulatan default */
+  padding-left: 0;
+  margin: 0;
+}
+
+.info-card li {
+  position: relative;
+  padding-left: 14px; /* Jarak teks dari tanda hubung */
+  margin-bottom: 6px; /* Jarak antar baris project */
+  color: #111827; 
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.info-card li::before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: #64727a; 
+}
+
 .info-card p {
-  color: #64727a;
+  color: #111827;
   font-size: 13px;
   line-height: 1.55;
 }
