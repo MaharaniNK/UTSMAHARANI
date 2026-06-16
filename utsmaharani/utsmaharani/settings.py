@@ -5,6 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get("SECRET_KEY", "default-key-untuk-lokal")
 
+# Di lokal, pastikan kamu membuat environment variable DEBUG=True agar bisa dibuka
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
@@ -25,11 +26,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Tulis nama aplikasi buatanmu di bawah sini jika ada (contoh: "nama_aplikasimu",)
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware", # Posisi sudah benar di sini
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -57,6 +59,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "utsmaharani.wsgi.application"
 
+
+# === PENGATURAN DATABASE (Wajib Ada) ===
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+
+
+# === PENGATURAN FILE STATIS ===
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = [
@@ -70,6 +83,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        # Diubah ke versi tanpa Manifest agar deploy ke Vercel lebih aman dari crash bff
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
