@@ -8,7 +8,6 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "default-key-untuk-lokal")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
-    "portofoliomaharani.vercel.app",
     ".vercel.app",
     "localhost",
     "127.0.0.1",

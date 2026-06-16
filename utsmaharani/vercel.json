@@ -5,11 +5,5 @@
       "src": "utsmaharani/wsgi.py",
       "use": "@vercel/python"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "utsmaharani/wsgi.py"
-    }
   ]
 }
